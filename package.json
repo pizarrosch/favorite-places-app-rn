@@ -8,6 +8,16 @@
     "ios": "expo start --ios",
     "web": "expo start --web"
   },
+  "expo": {
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Let the app use phone camera to take a photo"
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.1.17",
@@ -15,7 +25,8 @@
     "expo": "~51.0.20",
     "expo-status-bar": "~1.12.1",
     "react": "18.2.0",
-    "react-native": "0.74.3"
+    "react-native": "0.74.3",
+    "expo-image-picker": "~15.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

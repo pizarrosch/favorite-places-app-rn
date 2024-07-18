@@ -2,7 +2,7 @@ import {Pressable, Text, StyleSheet} from "react-native";
 import {Ionicons} from "@expo/vector-icons";
 import {Colors} from "../../constants/Colors";
 
-export default function OutlineButton({children, icon, onPress}) {
+export default function OutlinedButton({children, icon, onPress}) {
   return (
     <Pressable style={({pressed}) => [styles.button, pressed && styles.pressed]} onPress={onPress}>
       <Ionicons style={styles.icon} name={icon} size={18} color={Colors.primary500}/>

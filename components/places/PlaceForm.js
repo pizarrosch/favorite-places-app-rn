@@ -3,6 +3,7 @@ import {useState} from "react";
 import {Colors} from "../../constants/Colors";
 import ImagePicker from "../ImagePicker";
 import LocationPicker from "./LocationPicker";
+import Button from "../UI/Button";
 
 export default function PlaceForm({label}) {
 
@@ -21,7 +22,7 @@ export default function PlaceForm({label}) {
         </View>
         <ImagePicker />
         <LocationPicker />
-
+        <Button>Add place</Button>
       </ScrollView>
     </View>
   )

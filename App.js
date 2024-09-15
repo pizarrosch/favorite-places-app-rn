@@ -27,9 +27,9 @@ export default function App() {
       });
   }, []);
 
-  // if (!dbInitialized) {
-  //   return <AppLoading/>
-  // }
+  if (!dbInitialized) {
+    return <AppLoading/>
+  }
 
   return (
     <>

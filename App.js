@@ -20,15 +20,16 @@ export default function App() {
     init()
       .then(() => {
         setDbInitialized(true);
+        console.log('DB initialized');
       })
       .catch(error => {
         console.log(error);
       });
   }, []);
 
-  if (!dbInitialized) {
-    return <AppLoading/>
-  }
+  // if (!dbInitialized) {
+  //   return <AppLoading/>
+  // }
 
   return (
     <>

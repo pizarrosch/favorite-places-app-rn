@@ -18,13 +18,13 @@ export function init() {
 
 export function insertPlace(place) {
   return database.runAsync(
-    `INSERT INTO places (title, imageUri, address, lat, long) VALUES (?, ?, ?, ?, ?)`,
+    `INSERT INTO places (title, imageUri, address, lat, long, id) VALUES (?, ?, ?, ?, ?)`,
     [
       place.title,
       place.imageUri,
       place.address,
       place.location.lat,
-      place.location.long
+      place.location.long,
     ]
   );
 }
@@ -52,5 +52,23 @@ export async function fetchPlaces() {
   } catch (error) {
     console.log('Error', error);
   }
+}
 
+export async function fetchPlaceDetails(id) {
+  try {
+    const dbPlace = await database.getFirstAsync(`SELECT * FROM places WHERE id = ?`, [id]);
+
+    return new Place(
+      dbPlace.title,
+      dbPlace.imageUri,
+      {
+        address: dbPlace.address,
+        lat: dbPlace.lat,
+        long: dbPlace.long,
+      },
+      dbPlace.id
+    );
+  } catch (error) {
+    console.log('Error', error)
+  }
 }

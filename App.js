@@ -1,5 +1,5 @@
 import {StatusBar} from 'expo-status-bar';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {NavigationContainer, useNavigation} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import AllPlaces from "./screens/AllPlaces";
@@ -10,6 +10,7 @@ import Map from './screens/Map';
 import {useEffect, useState} from "react";
 import {init} from "./util/database";
 import AppLoading from "expo-app-loading";
+import PlaceDetails from "./screens/PlaceDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -72,6 +73,13 @@ export default function App() {
             component={Map}
             options={{
               title: 'Full map'
+            }}
+          />
+          <Stack.Screen
+            name='PlaceDetails'
+            component={PlaceDetails}
+            options={{
+              title: 'Loading place ...'
             }}
           />
         </Stack.Navigator>

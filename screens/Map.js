@@ -38,7 +38,8 @@ export default function Map({navigation}) {
 
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerRight: ({tintColor}) => <IconButton icon='save' size={24} color={tintColor} onPress={savePickedLocationHandler} />
+      headerRight: ({tintColor}) => <IconButton icon='save' size={24} color={tintColor}
+                                                onPress={savePickedLocationHandler}/>
     });
   }, [navigation, savePickedLocationHandler])
 
